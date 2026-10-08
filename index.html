@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>WanderAI - AI Travel Planner</title>
+
+    <!-- YOUR EXISTING CSS FILE -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <nav class="navbar">
+
+        <div class="nav-inner">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                Wander<span>AI</span> ✈️
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+            <ul class="nav-links">
+
+                <li>
+                    <a
+                        href="features.html"
+                        data-i18n="navFeatures"
+                    >
+                        Features
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="destinations.html"
+                        data-i18n="navDestinations"
+                    >
+                        Destinations
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="planner.html"
+                        data-i18n="navPlanner"
+                    >
+                        Planner
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <!-- LANGUAGE SELECTOR -->
+
+            <select
+                id="language"
+                class="language-select"
+            >
+
+                <option value="en">
+                    English
+                </option>
+
+                <option value="hi">
+                    हिन्दी
+                </option>
+
+                <option value="gu">
+                    ગુજરાતી
+                </option>
+
+            </select>
+
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         HERO SECTION
+    ====================================================== -->
+
+    <section class="hero">
+
+
+        <div class="hero-content">
+
+
+            <!-- HERO BADGE -->
+
+            <div
+                class="hero-badge"
+                data-i18n="heroBadge"
+            >
+
+                🤖 AI Powered Travel Planning
+
+            </div>
+
+
+
+            <!-- HERO TITLE -->
+
+            <h1 data-i18n="heroTitle">
+
+                Plan Your Journey
+
+                <br>
+
+                <span>
+                    Smarter With AI
+                </span>
+
+            </h1>
+
+
+
+            <!-- HERO DESCRIPTION -->
+
+            <p data-i18n="heroText">
+
+                From your city to your destination,
+                WanderAI creates transport routes,
+                daily itineraries and complete trip budgets.
+
+            </p>
+
+
+
+            <!-- HERO BUTTONS -->
+
+            <div class="hero-buttons">
+
+
+                <a
+                    href="planner.html"
+                    class="btn btn-primary"
+                    data-i18n="startPlanning"
+                >
+
+                    Start Planning
+
+                </a>
+
+
+
+                <a
+                    href="destinations.html"
+                    class="btn btn-white"
+                    data-i18n="exploreDestinations"
+                >
+
+                    Explore Destinations
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FEATURES PREVIEW
+    ====================================================== -->
+
+    <section class="section">
+
+
+        <div class="section-title">
+
+
+            <small data-i18n="whyWander">
+
+                Why WanderAI
+
+            </small>
+
+
+            <h2 data-i18n="everythingTrip">
+
+                Everything For Your Trip
+
+            </h2>
+
+
+            <p data-i18n="onePlanner">
+
+                One planner for route, transport,
+                stay, food and itinerary.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="features">
+
+
+            <!-- FEATURE 1 -->
+
+            <div class="feature-card">
+
+
+                <div class="feature-icon">
+
+                    🧭
+
+                </div>
+
+
+                <h3 data-i18n="smartRoute">
+
+                    Smart Route
+
+                </h3>
+
+
+                <p data-i18n="smartRouteText">
+
+                    Plans practical routes with
+                    connecting cities when required.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- FEATURE 2 -->
+
+            <div class="feature-card">
+
+
+                <div class="feature-icon">
+
+                    📅
+
+                </div>
+
+
+                <h3 data-i18n="dayPlan">
+
+                    Day Wise Plan
+
+                </h3>
+
+
+                <p data-i18n="dayPlanText">
+
+                    Get a clear plan for every day
+                    with proper places to visit.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- FEATURE 3 -->
+
+            <div class="feature-card">
+
+
+                <div class="feature-icon">
+
+                    💰
+
+                </div>
+
+
+                <h3 data-i18n="budgetPlanning">
+
+                    Budget Planning
+
+                </h3>
+
+
+                <p data-i18n="budgetText">
+
+                    See transport, hotel, food
+                    and activity costs separately.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- FEATURE 4 -->
+
+            <div class="feature-card">
+
+
+                <div class="feature-icon">
+
+                    🌎
+
+                </div>
+
+
+                <h3 data-i18n="multiCurrency">
+
+                    Multi Currency
+
+                </h3>
+
+
+                <p data-i18n="currencyText">
+
+                    International trips can show
+                    local currency and INR reference.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         QUICK DESTINATIONS
+    ====================================================== -->
+
+    <section class="section section-soft">
+
+
+        <div class="section-title">
+
+
+            <small data-i18n="quickStart">
+
+                Quick Start
+
+            </small>
+
+
+            <h2 data-i18n="chooseWhere">
+
+                Choose Your Destination
+
+            </h2>
+
+
+            <p>
+
+                Select a popular destination
+                and start planning.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="destinations">
+
+
+            <!-- GOA -->
+
+            <a
+                href="planner.html?to=Goa"
+                class="destination-card destination-goa"
+            >
+
+                <div class="destination-info">
+
+                    <h3>
+
+                        Goa 🇮🇳
+
+                    </h3>
+
+                    <p>
+
+                        Beaches • Food • Nightlife
+
+                    </p>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- MANALI -->
+
+            <a
+                href="planner.html?to=Manali"
+                class="destination-card destination-manali"
+            >
+
+                <div class="destination-info">
+
+                    <h3>
+
+                        Manali 🇮🇳
+
+                    </h3>
+
+                    <p>
+
+                        Mountains • Adventure • Snow
+
+                    </p>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- JAIPUR -->
+
+            <a
+                href="planner.html?to=Jaipur"
+                class="destination-card destination-jaipur"
+            >
+
+                <div class="destination-info">
+
+                    <h3>
+
+                        Jaipur 🇮🇳
+
+                    </h3>
+
+                    <p>
+
+                        Forts • Culture • Heritage
+
+                    </p>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- DUBAI -->
+
+            <a
+                href="planner.html?to=Dubai"
+                class="destination-card destination-dubai"
+            >
+
+                <div class="destination-info">
+
+                    <h3>
+
+                        Dubai 🌎
+
+                    </h3>
+
+                    <p>
+
+                        Luxury • Shopping • Skyline
+
+                    </p>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CALL TO ACTION
+    ====================================================== -->
+
+    <section class="section">
+
+
+        <div class="section-title">
+
+
+            <small>
+
+                ✈️ WANDERAI
+
+            </small>
+
+
+            <h2>
+
+                Ready To Plan Your Trip?
+
+            </h2>
+
+
+            <p>
+
+                Select your city, destination,
+                budget and travel style.
+
+            </p>
+
+
+            <div style="margin-top:25px;">
+
+                <a
+                    href="planner.html"
+                    class="btn btn-primary"
+                    data-i18n="startPlanning"
+                >
+
+                    Start Planning
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+
+        <strong>
+
+            WanderAI
+
+        </strong>
+
+
+        <p data-i18n="footer">
+
+            AI-powered travel planning
+            for smarter journeys.
+
+        </p>
+
+
+        <div
+            style="
+                margin-top:15px;
+                font-size:13px;
+                color:#94a3b8;
+            "
+        >
+
+            © 2026 WanderAI
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

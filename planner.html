@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>WanderAI - Travel Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <nav class="navbar">
+
+        <div class="nav-inner">
+
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                Wander<span>AI</span> ✈️
+            </a>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a
+                        href="features.html"
+                        data-i18n="navFeatures"
+                    >
+                        Features
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="destinations.html"
+                        data-i18n="navDestinations"
+                    >
+                        Destinations
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="planner.html"
+                        class="active"
+                        data-i18n="navPlanner"
+                    >
+                        Planner
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <!-- LANGUAGE -->
+
+            <select
+                id="language"
+                class="language-select"
+            >
+
+                <option value="en">
+                    English
+                </option>
+
+                <option value="hi">
+                    हिन्दी
+                </option>
+
+                <option value="gu">
+                    ગુજરાતી
+                </option>
+
+            </select>
+
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         PLANNER HEADER
+    ====================================================== -->
+
+    <section class="planner-page-header">
+
+        <div class="section-title">
+
+            <small>
+                ✈️ AI PLANNER
+            </small>
+
+
+            <h1 data-i18n="plannerTitle">
+
+                Create Your Trip
+
+            </h1>
+
+
+            <p data-i18n="plannerText">
+
+                Enter your journey details and
+                generate your complete plan.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PLANNER
+    ====================================================== -->
+
+    <section
+        class="planner-section"
+        id="planner"
+    >
+
+        <div class="planner-container">
+
+
+            <div class="planner-card">
+
+
+                <!-- =================================================
+                     TRIP TYPE
+                ================================================== -->
+
+                <div class="trip-switch">
+
+
+                    <button
+                        id="indiaBtn"
+                        class="trip-btn active"
+                        type="button"
+                        onclick="selectTripType('India')"
+                    >
+
+                        🇮🇳 India Trip
+
+                    </button>
+
+
+                    <button
+                        id="internationalBtn"
+                        class="trip-btn"
+                        type="button"
+                        onclick="selectTripType('International')"
+                    >
+
+                        🌎 Out of India
+
+                    </button>
+
+
+                </div>
+
+
+                <input
+                    type="hidden"
+                    id="tripType"
+                    value="India"
+                >
+
+
+
+                <!-- =================================================
+                     INDIA DESTINATION SELECTION
+                ================================================== -->
+
+                <div
+                    id="indiaDestinationFields"
+                    class="destination-planner-box"
+                >
+
+
+                    <div class="destination-box-title">
+
+                        <span>
+                            🇮🇳
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                India Destination
+                            </h3>
+
+                            <p>
+                                Select State first,
+                                then choose your city.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- FROM -->
+
+                        <div class="field">
+
+                            <label>
+                                📍 From City
+                            </label>
+
+
+                            <input
+                                id="fromCity"
+                                type="text"
+                                placeholder="Example: Bhavnagar"
+                            >
+
+                        </div>
+
+
+
+                        <!-- STATE -->
+
+                        <div class="field">
+
+                            <label>
+                                🗺️ Destination State
+                            </label>
+
+
+                            <select id="indiaState">
+
+                                <option value="">
+                                    Select State
+                                </option>
+
+                                <option value="Gujarat">
+                                    Gujarat
+                                </option>
+
+                                <option value="Maharashtra">
+                                    Maharashtra
+                                </option>
+
+                                <option value="Rajasthan">
+                                    Rajasthan
+                                </option>
+
+                                <option value="Goa">
+                                    Goa
+                                </option>
+
+                                <option value="Himachal Pradesh">
+                                    Himachal Pradesh
+                                </option>
+
+                                <option value="Uttarakhand">
+                                    Uttarakhand
+                                </option>
+
+                                <option value="Kerala">
+                                    Kerala
+                                </option>
+
+                                <option value="Tamil Nadu">
+                                    Tamil Nadu
+                                </option>
+
+                                <option value="Karnataka">
+                                    Karnataka
+                                </option>
+
+                                <option value="Delhi">
+                                    Delhi
+                                </option>
+
+                                <option value="Uttar Pradesh">
+                                    Uttar Pradesh
+                                </option>
+
+                                <option value="West Bengal">
+                                    West Bengal
+                                </option>
+
+                                <option value="Jammu and Kashmir">
+                                    Jammu and Kashmir
+                                </option>
+
+                                <option value="Punjab">
+                                    Punjab
+                                </option>
+
+                                <option value="Assam">
+                                    Assam
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- CITY -->
+
+                        <div class="field full">
+
+                            <label>
+                                🎯 Destination City
+                            </label>
+
+
+                            <select
+                                id="indiaCity"
+                                disabled
+                            >
+
+                                <option value="">
+                                    Select State First
+                                </option>
+
+                            </select>
+
+
+                            <div
+                                id="indiaLocationInfo"
+                                class="location-info"
+                            >
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     INTERNATIONAL DESTINATION
+                ================================================== -->
+
+                <div
+                    id="internationalDestinationFields"
+                    class="destination-planner-box"
+                    style="display:none;"
+                >
+
+
+                    <div class="destination-box-title">
+
+                        <span>
+                            🌎
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                International Destination
+                            </h3>
+
+                            <p>
+                                Select Country first,
+                                then choose your city.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- FROM -->
+
+                        <div class="field">
+
+                            <label>
+                                📍 From City
+                            </label>
+
+
+                            <input
+                                id="internationalFrom"
+                                type="text"
+                                placeholder="Example: Ahmedabad"
+                            >
+
+                        </div>
+
+
+
+                        <!-- COUNTRY -->
+
+                        <div class="field">
+
+                            <label>
+                                🌎 Destination Country
+                            </label>
+
+
+                            <select id="internationalCountry">
+
+                                <option value="">
+                                    Select Country
+                                </option>
+
+                                <option value="United Arab Emirates">
+                                    United Arab Emirates
+                                </option>
+
+                                <option value="Thailand">
+                                    Thailand
+                                </option>
+
+                                <option value="Singapore">
+                                    Singapore
+                                </option>
+
+                                <option value="Malaysia">
+                                    Malaysia
+                                </option>
+
+                                <option value="Indonesia">
+                                    Indonesia
+                                </option>
+
+                                <option value="Nepal">
+                                    Nepal
+                                </option>
+
+                                <option value="United Kingdom">
+                                    United Kingdom
+                                </option>
+
+                                <option value="France">
+                                    France
+                                </option>
+
+                                <option value="Italy">
+                                    Italy
+                                </option>
+
+                                <option value="Switzerland">
+                                    Switzerland
+                                </option>
+
+                                <option value="United States">
+                                    United States
+                                </option>
+
+                                <option value="Australia">
+                                    Australia
+                                </option>
+
+                                <option value="Japan">
+                                    Japan
+                                </option>
+
+                                <option value="South Korea">
+                                    South Korea
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- CITY -->
+
+                        <div class="field full">
+
+                            <label>
+                                🎯 Destination City
+                            </label>
+
+
+                            <select
+                                id="internationalCity"
+                                disabled
+                            >
+
+                                <option value="">
+                                    Select Country First
+                                </option>
+
+                            </select>
+
+
+                            <div
+                                id="internationalLocationInfo"
+                                class="location-info"
+                            >
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     DATES / TRAVELERS / BUDGET
+                ================================================== -->
+
+                <div class="form-grid planner-basic-fields">
+
+
+                    <!-- DEPARTURE -->
+
+                    <div class="field">
+
+                        <label>
+                            📅 Departure Date
+                        </label>
+
+
+                        <input
+                            id="departureDate"
+                            type="date"
+                        >
+
+                    </div>
+
+
+
+                    <!-- RETURN -->
+
+                    <div class="field">
+
+                        <label>
+                            📅 Return Date
+                        </label>
+
+
+                        <input
+                            id="returnDate"
+                            type="date"
+                        >
+
+                    </div>
+
+
+
+                    <!-- TRAVELERS -->
+
+                    <div class="field">
+
+                        <label>
+                            👥 Travelers
+                        </label>
+
+
+                        <input
+                            id="travelers"
+                            type="number"
+                            min="1"
+                            value="1"
+                        >
+
+                    </div>
+
+
+
+                    <!-- BUDGET -->
+
+                    <div class="field">
+
+                        <label>
+                            💰 Maximum Budget (₹)
+                        </label>
+
+
+                        <input
+                            id="budget"
+                            type="number"
+                            min="1"
+                            placeholder="Example: 30000"
+                        >
+
+                    </div>
+
+
+
+                    <!-- TRAVEL STYLE -->
+
+                    <div class="field full">
+
+                        <label>
+                            🎒 Travel Style
+                        </label>
+
+
+                        <select id="travelStyle">
+
+                            <option value="Budget">
+                                💸 Budget
+                            </option>
+
+                            <option
+                                value="Balanced"
+                                selected
+                            >
+                                ⚖️ Balanced
+                            </option>
+
+                            <option value="Adventure">
+                                🏔️ Adventure
+                            </option>
+
+                            <option value="Family">
+                                👨‍👩‍👧 Family
+                            </option>
+
+                            <option value="Luxury">
+                                💎 Luxury
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     INDIA TRANSPORT
+                ================================================== -->
+
+                <div
+                    id="indiaTransportSection"
+                    class="transport-section"
+                >
+
+                    <div class="transport-title">
+
+                        🚦 Choose Transportation
+
+                    </div>
+
+
+                    <div class="transport-grid">
+
+
+                        <button
+                            type="button"
+                            class="transport-option"
+                            data-transport="Car"
+                            onclick="selectTransport('Car')"
+                        >
+
+                            🚗
+                            <strong>
+                                Car
+                            </strong>
+
+                            <small>
+                                Road Trip
+                            </small>
+
+                        </button>
+
+
+
+                        <button
+                            type="button"
+                            class="transport-option"
+                            data-transport="Bus"
+                            onclick="selectTransport('Bus')"
+                        >
+
+                            🚌
+                            <strong>
+                                Bus
+                            </strong>
+
+                            <small>
+                                Intercity Bus
+                            </small>
+
+                        </button>
+
+
+
+                        <button
+                            type="button"
+                            class="transport-option"
+                            data-transport="Train"
+                            onclick="selectTransport('Train')"
+                        >
+
+                            🚆
+                            <strong>
+                                Train
+                            </strong>
+
+                            <small>
+                                Railway
+                            </small>
+
+                        </button>
+
+
+
+                        <button
+                            type="button"
+                            class="transport-option active"
+                            data-transport="Flight"
+                            onclick="selectTransport('Flight')"
+                        >
+
+                            ✈️
+                            <strong>
+                                Flight
+                            </strong>
+
+                            <small>
+                                Domestic Flight
+                            </small>
+
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     INTERNATIONAL TRANSPORT
+                ================================================== -->
+
+                <div
+                    id="internationalTransportSection"
+                    class="transport-section"
+                    style="display:none;"
+                >
+
+                    <div class="transport-title">
+
+                        ✈️ International Transportation
+
+                    </div>
+
+
+                    <div class="transport-grid">
+
+
+                        <div class="transport-option active">
+
+                            ✈️
+
+                            <strong>
+                                Flight Only
+                            </strong>
+
+                            <small>
+                                International Flight
+                            </small>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SERVICES
+                ================================================== -->
+
+                <div class="services">
+
+
+                    <div class="transport-title">
+
+                        🏨 Additional Services
+
+                    </div>
+
+
+                    <div class="service-grid">
+
+
+                        <label class="service">
+
+                            <input
+                                id="hotelOption"
+                                type="checkbox"
+                                checked
+                            >
+
+                            <span>
+                                🏨 Hotel
+                            </span>
+
+                        </label>
+
+
+
+                        <label class="service">
+
+                            <input
+                                id="foodOption"
+                                type="checkbox"
+                                checked
+                            >
+
+                            <span>
+                                🍽️ Food
+                            </span>
+
+                        </label>
+
+
+
+                        <label class="service">
+
+                            <input
+                                id="restaurantOption"
+                                type="checkbox"
+                                checked
+                            >
+
+                            <span>
+                                🍴 Restaurant
+                            </span>
+
+                        </label>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     GENERATE BUTTON
+                ================================================== -->
+
+                <div class="generate-wrap">
+
+
+                    <button
+                        class="generate-btn"
+                        type="button"
+                        onclick="generatePlan()"
+                    >
+
+                        ✨ Generate My AI Travel Plan
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     RESULT
+                ================================================== -->
+
+                <div
+                    id="result"
+                    class="result"
+                >
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <strong>
+            WanderAI
+        </strong>
+
+
+        <p data-i18n="footer">
+
+            AI-powered travel planning
+            for smarter journeys.
+
+        </p>
+
+
+        <div
+            style="
+                margin-top:15px;
+                font-size:13px;
+                color:#94a3b8;
+            "
+        >
+
+            © 2026 WanderAI
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

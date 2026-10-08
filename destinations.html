@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>WanderAI - Destinations</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <nav class="navbar">
+
+        <div class="nav-inner">
+
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                Wander<span>AI</span> ✈️
+            </a>
+
+
+            <ul class="nav-links">
+
+                <li>
+
+                    <a
+                        href="features.html"
+                        data-i18n="navFeatures"
+                    >
+                        Features
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a
+                        href="destinations.html"
+                        class="active"
+                        data-i18n="navDestinations"
+                    >
+                        Destinations
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a
+                        href="planner.html"
+                        data-i18n="navPlanner"
+                    >
+                        Planner
+                    </a>
+
+                </li>
+
+            </ul>
+
+
+            <!-- LANGUAGE -->
+
+            <select
+                id="language"
+                class="language-select"
+            >
+
+                <option value="en">
+                    English
+                </option>
+
+                <option value="hi">
+                    हिन्दी
+                </option>
+
+                <option value="gu">
+                    ગુજરાતી
+                </option>
+
+            </select>
+
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         PAGE HERO
+    ====================================================== -->
+
+    <section class="page-hero">
+
+        <div class="page-hero-content">
+
+            <span>
+                🌍 EXPLORE THE WORLD
+            </span>
+
+
+            <h1 data-i18n="destinationsPageTitle">
+
+                Explore Destinations
+
+            </h1>
+
+
+            <p data-i18n="destinationsPageText">
+
+                Choose your state, country and city
+                to start creating your travel plan.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DESTINATION SELECTOR
+    ====================================================== -->
+
+    <section class="section">
+
+
+        <div class="section-title">
+
+            <small>
+                🗺️ DESTINATION SELECTOR
+            </small>
+
+            <h2>
+                Select Your Destination
+            </h2>
+
+            <p>
+                Choose from India or international
+                destinations.
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             INDIA / INTERNATIONAL SWITCH
+        ================================================== -->
+
+        <div class="destination-switch">
+
+
+            <button
+                id="indiaDestinationBtn"
+                class="destination-switch-btn active"
+                onclick="showDestinationType('India')"
+            >
+
+                🇮🇳 India
+
+            </button>
+
+
+            <button
+                id="internationalDestinationBtn"
+                class="destination-switch-btn"
+                onclick="showDestinationType('International')"
+            >
+
+                🌎 Out of India
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             INDIA SELECTOR
+        ================================================== -->
+
+        <div
+            id="indiaDestinationPanel"
+            class="destination-selector-card"
+        >
+
+
+            <div class="destination-selector-header">
+
+                <div>
+
+                    <span>
+                        🇮🇳
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            India Destinations
+                        </h3>
+
+                        <p>
+                            First select a state,
+                            then select a city.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="destination-form-grid">
+
+
+                <!-- STATE -->
+
+                <div class="field">
+
+                    <label>
+                        🗺️ Select State
+                    </label>
+
+
+                    <select id="indiaState">
+
+                        <option value="">
+                            Select State
+                        </option>
+
+                        <option value="Gujarat">
+                            Gujarat
+                        </option>
+
+                        <option value="Maharashtra">
+                            Maharashtra
+                        </option>
+
+                        <option value="Rajasthan">
+                            Rajasthan
+                        </option>
+
+                        <option value="Goa">
+                            Goa
+                        </option>
+
+                        <option value="Himachal Pradesh">
+                            Himachal Pradesh
+                        </option>
+
+                        <option value="Uttarakhand">
+                            Uttarakhand
+                        </option>
+
+                        <option value="Kerala">
+                            Kerala
+                        </option>
+
+                        <option value="Tamil Nadu">
+                            Tamil Nadu
+                        </option>
+
+                        <option value="Karnataka">
+                            Karnataka
+                        </option>
+
+                        <option value="Delhi">
+                            Delhi
+                        </option>
+
+                        <option value="Uttar Pradesh">
+                            Uttar Pradesh
+                        </option>
+
+                        <option value="West Bengal">
+                            West Bengal
+                        </option>
+
+                        <option value="Jammu and Kashmir">
+                            Jammu and Kashmir
+                        </option>
+
+                        <option value="Punjab">
+                            Punjab
+                        </option>
+
+                        <option value="Assam">
+                            Assam
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- CITY -->
+
+                <div class="field">
+
+                    <label>
+                        📍 Select City
+                    </label>
+
+
+                    <select
+                        id="indiaCity"
+                        disabled
+                    >
+
+                        <option value="">
+                            Select State First
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- INDIA RESULT -->
+
+            <div
+                id="indiaDestinationInfo"
+                class="selected-destination-info"
+            >
+
+                <div class="empty-destination">
+
+                    🇮🇳
+
+                    <h3>
+                        Select a State and City
+                    </h3>
+
+                    <p>
+                        Destination details will
+                        appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             INTERNATIONAL SELECTOR
+        ================================================== -->
+
+        <div
+            id="internationalDestinationPanel"
+            class="destination-selector-card"
+            style="display:none;"
+        >
+
+
+            <div class="destination-selector-header">
+
+                <div>
+
+                    <span>
+                        🌎
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            International Destinations
+                        </h3>
+
+                        <p>
+                            First select a country,
+                            then select a city.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="destination-form-grid">
+
+
+                <!-- COUNTRY -->
+
+                <div class="field">
+
+                    <label>
+                        🌎 Select Country
+                    </label>
+
+
+                    <select id="internationalCountry">
+
+                        <option value="">
+                            Select Country
+                        </option>
+
+                        <option value="United Arab Emirates">
+                            United Arab Emirates
+                        </option>
+
+                        <option value="Thailand">
+                            Thailand
+                        </option>
+
+                        <option value="Singapore">
+                            Singapore
+                        </option>
+
+                        <option value="Malaysia">
+                            Malaysia
+                        </option>
+
+                        <option value="Indonesia">
+                            Indonesia
+                        </option>
+
+                        <option value="Nepal">
+                            Nepal
+                        </option>
+
+                        <option value="United Kingdom">
+                            United Kingdom
+                        </option>
+
+                        <option value="France">
+                            France
+                        </option>
+
+                        <option value="Italy">
+                            Italy
+                        </option>
+
+                        <option value="Switzerland">
+                            Switzerland
+                        </option>
+
+                        <option value="United States">
+                            United States
+                        </option>
+
+                        <option value="Australia">
+                            Australia
+                        </option>
+
+                        <option value="Japan">
+                            Japan
+                        </option>
+
+                        <option value="South Korea">
+                            South Korea
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- CITY -->
+
+                <div class="field">
+
+                    <label>
+                        📍 Select City
+                    </label>
+
+
+                    <select
+                        id="internationalCity"
+                        disabled
+                    >
+
+                        <option value="">
+                            Select Country First
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- INTERNATIONAL RESULT -->
+
+            <div
+                id="internationalDestinationInfo"
+                class="selected-destination-info"
+            >
+
+                <div class="empty-destination">
+
+                    🌎
+
+                    <h3>
+                        Select a Country and City
+                    </h3>
+
+                    <p>
+                        Destination details will
+                        appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         POPULAR INDIA DESTINATIONS
+    ====================================================== -->
+
+    <section class="section section-soft">
+
+
+        <div class="section-title">
+
+            <small>
+                🇮🇳 INDIA
+            </small>
+
+            <h2>
+                Popular Indian Destinations
+            </h2>
+
+        </div>
+
+
+
+        <div class="destinations">
+
+
+            <a
+                href="planner.html?to=Goa"
+                class="destination-card destination-goa"
+            >
+
+                <div class="destination-info">
+
+                    <h3>
+                        Goa
+                    </h3>
+
+                    <p>
+                        Goa • Beaches • Forts
+                    </p>
+
+                </div>
+
+            </a>
+
+
+
+            <a
+                href="planner.html?to=Manali"
+                class="destination-card destination-manali"
+            >
+
+                <div class="destination-info">
+
+                    <h3>
+                        Manali
+                    </h3>
+
+                    <p>
+                        Himachal Pradesh • Mountains
+                    </p>
+
+                </div>
+
+            </a>
+
+
+
+            <a
+                href="planner.html?to=Jaipur"
+                class="destination-card destination-jaipur"
+            >
+
+                <div class="destination-info">
+
+                    <h3>
+                        Jaipur
+                    </h3>
+
+                    <p>
+                        Rajasthan • Heritage
+                    </p>
+
+                </div>
+
+            </a>
+
+
+
+            <a
+                href="planner.html?to=Mumbai"
+                class="destination-card destination-mumbai"
+            >
+
+                <div class="destination-info">
+
+                    <h3>
+                        Mumbai
+                    </h3>
+
+                    <p>
+                        Maharashtra • City Life
+                    </p>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INTERNATIONAL DESTINATIONS
+    ====================================================== -->
+
+    <section class="section">
+
+
+        <div class="section-title">
+
+            <small>
+                🌎 INTERNATIONAL
+            </small>
+
+            <h2>
+                Popular International Destinations
+            </h2>
+
+        </div>
+
+
+
+        <div class="destinations">
+
+
+            <a
+                href="planner.html?to=Dubai"
+                class="destination-card destination-dubai"
+            >
+
+                <div class="destination-info">
+
+                    <h3>
+                        Dubai
+                    </h3>
+
+                    <p>
+                        UAE • Luxury • Skyline
+                    </p>
+
+                </div>
+
+            </a>
+
+
+
+            <a
+                href="planner.html?to=Singapore"
+                class="destination-card destination-singapore"
+            >
+
+                <div class="destination-info">
+
+                    <h3>
+                        Singapore
+                    </h3>
+
+                    <p>
+                        Singapore • Modern City
+                    </p>
+
+                </div>
+
+            </a>
+
+
+
+            <a
+                href="planner.html?to=Bangkok"
+                class="destination-card destination-bangkok"
+            >
+
+                <div class="destination-info">
+
+                    <h3>
+                        Bangkok
+                    </h3>
+
+                    <p>
+                        Thailand • Culture • Food
+                    </p>
+
+                </div>
+
+            </a>
+
+
+
+            <a
+                href="planner.html?to=London"
+                class="destination-card destination-london"
+            >
+
+                <div class="destination-info">
+
+                    <h3>
+                        London
+                    </h3>
+
+                    <p>
+                        UK • History • Culture
+                    </p>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <strong>
+            WanderAI
+        </strong>
+
+        <p data-i18n="footer">
+
+            AI-powered travel planning
+            for smarter journeys.
+
+        </p>
+
+        <div
+            style="
+                margin-top:15px;
+                font-size:13px;
+                color:#94a3b8;
+            "
+        >
+            © 2026 WanderAI
+        </div>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
