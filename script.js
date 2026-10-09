@@ -161,6 +161,68 @@ const indiaDestinations = {
 };
 
 
+/* State/UT -> district lists (reviewed snapshot; administrative boundaries can change). */
+const indiaDistricts = {
+    'Andhra Pradesh': ['Alluri Sitharama Raju', 'Anakapalli', 'Anantapuramu', 'Annamayya', 'Bapatla', 'Chittoor', 'Dr B R Ambedkar Konaseema', 'East Godavari', 'Eluru', 'Guntur', 'Kakinada', 'Krishna', 'Kurnool', 'Nandyal', 'NTR', 'Palnadu', 'Parvathipuram Manyam', 'Prakasam', 'Sri Potti Sriramulu Nellore', 'Sri Sathya Sai', 'Srikakulam', 'Tirupati', 'Visakhapatnam', 'Vizianagaram', 'West Godavari', 'YSR Kadapa'],
+    'Arunachal Pradesh': ['Anjaw', 'Changlang', 'Dibang Valley', 'East Kameng', 'East Siang', 'Itanagar Capital Complex', 'Kamle', 'Keyi Panyor', 'Kra Daadi', 'Kurung Kumey', 'Lepa Rada', 'Lohit', 'Longding', 'Lower Dibang Valley', 'Lower Siang', 'Lower Subansiri', 'Namsai', 'Pakke Kessang', 'Papum Pare', 'Shi Yomi', 'Siang', 'Tawang', 'Tirap', 'Upper Siang', 'Upper Subansiri', 'West Kameng', 'West Siang'],
+    'Assam': ['Bajali', 'Baksa', 'Barpeta', 'Biswanath', 'Bongaigaon', 'Cachar', 'Charaideo', 'Chirang', 'Darrang', 'Dhemaji', 'Dhubri', 'Dibrugarh', 'Dima Hasao', 'Goalpara', 'Golaghat', 'Hailakandi', 'Hojai', 'Jorhat', 'Kamrup', 'Kamrup Metropolitan', 'Karbi Anglong', 'Kokrajhar', 'Lakhimpur', 'Majuli', 'Morigaon', 'Nagaon', 'Nalbari', 'Sivasagar', 'Sonitpur', 'South Salmara-Mankachar', 'Sribhumi', 'Tamulpur', 'Tinsukia', 'Udalguri', 'West Karbi Anglong'],
+    'Bihar': ['Araria', 'Arwal', 'Aurangabad', 'Banka', 'Begusarai', 'Bhagalpur', 'Bhojpur', 'Buxar', 'Darbhanga', 'East Champaran', 'Gaya', 'Gopalganj', 'Jamui', 'Jehanabad', 'Kaimur', 'Katihar', 'Khagaria', 'Kishanganj', 'Lakhisarai', 'Madhepura', 'Madhubani', 'Munger', 'Muzaffarpur', 'Nalanda', 'Nawada', 'Patna', 'Purnia', 'Rohtas', 'Saharsa', 'Samastipur', 'Saran', 'Sheikhpura', 'Sheohar', 'Sitamarhi', 'Siwan', 'Supaul', 'Vaishali', 'West Champaran'],
+    'Chhattisgarh': ['Balod', 'Baloda Bazar-Bhatapara', 'Balrampur-Ramanujganj', 'Bastar', 'Bemetara', 'Bijapur', 'Bilaspur', 'Dantewada', 'Dhamtari', 'Durg', 'Gariaband', 'Gaurela-Pendra-Marwahi', 'Janjgir-Champa', 'Jashpur', 'Kabirdham', 'Kanker', 'Khairagarh-Chhuikhadan-Gandai', 'Kondagaon', 'Korba', 'Korea', 'Mahasamund', 'Manendragarh-Chirmiri-Bharatpur', 'Mohla-Manpur-Ambagarh Chowki', 'Mungeli', 'Narayanpur', 'Raigarh', 'Raipur', 'Rajnandgaon', 'Sakti', 'Sarangarh-Bilaigarh', 'Sukma', 'Surajpur', 'Surguja'],
+    'Goa': ['North Goa', 'South Goa'],
+    'Gujarat': ['Ahmedabad', 'Amreli', 'Anand', 'Aravalli', 'Banaskantha', 'Bharuch', 'Bhavnagar', 'Botad', 'Chhota Udaipur', 'Dahod', 'Dang', 'Devbhoomi Dwarka', 'Gandhinagar', 'Gir Somnath', 'Jamnagar', 'Junagadh', 'Kachchh', 'Kheda', 'Mahisagar', 'Mehsana', 'Morbi', 'Narmada', 'Navsari', 'Panchmahal', 'Patan', 'Porbandar', 'Rajkot', 'Sabarkantha', 'Surat', 'Surendranagar', 'Tapi', 'Vadodara', 'Valsad'],
+    'Haryana': ['Ambala', 'Bhiwani', 'Charkhi Dadri', 'Faridabad', 'Fatehabad', 'Gurugram', 'Hisar', 'Jhajjar', 'Jind', 'Kaithal', 'Karnal', 'Kurukshetra', 'Mahendragarh', 'Nuh', 'Palwal', 'Panchkula', 'Panipat', 'Rewari', 'Rohtak', 'Sirsa', 'Sonipat', 'Yamunanagar'],
+    'Himachal Pradesh': ['Bilaspur', 'Chamba', 'Hamirpur', 'Kangra', 'Kinnaur', 'Kullu', 'Lahaul and Spiti', 'Mandi', 'Shimla', 'Sirmaur', 'Solan', 'Una'],
+    'Jharkhand': ['Bokaro', 'Chatra', 'Deoghar', 'Dhanbad', 'Dumka', 'East Singhbhum', 'Garhwa', 'Giridih', 'Godda', 'Gumla', 'Hazaribagh', 'Jamtara', 'Khunti', 'Koderma', 'Latehar', 'Lohardaga', 'Pakur', 'Palamu', 'Ramgarh', 'Ranchi', 'Sahibganj', 'Seraikela-Kharsawan', 'Simdega', 'West Singhbhum'],
+    'Karnataka': ['Bagalkot', 'Ballari', 'Belagavi', 'Bengaluru Rural', 'Bengaluru Urban', 'Bidar', 'Chamarajanagar', 'Chikkaballapura', 'Chikkamagaluru', 'Chitradurga', 'Dakshina Kannada', 'Davanagere', 'Dharwad', 'Gadag', 'Hassan', 'Haveri', 'Kalaburagi', 'Kodagu', 'Kolar', 'Koppal', 'Mandya', 'Mysuru', 'Raichur', 'Ramanagara', 'Shivamogga', 'Tumakuru', 'Udupi', 'Uttara Kannada', 'Vijayanagara', 'Vijayapura', 'Yadgir'],
+    'Kerala': ['Alappuzha', 'Ernakulam', 'Idukki', 'Kannur', 'Kasaragod', 'Kollam', 'Kottayam', 'Kozhikode', 'Malappuram', 'Palakkad', 'Pathanamthitta', 'Thiruvananthapuram', 'Thrissur', 'Wayanad'],
+    'Madhya Pradesh': ['Agar Malwa', 'Alirajpur', 'Anuppur', 'Ashoknagar', 'Balaghat', 'Barwani', 'Betul', 'Bhind', 'Bhopal', 'Burhanpur', 'Chhatarpur', 'Chhindwara', 'Damoh', 'Datia', 'Dewas', 'Dhar', 'Dindori', 'Guna', 'Gwalior', 'Harda', 'Indore', 'Jabalpur', 'Jhabua', 'Katni', 'Khandwa', 'Khargone', 'Maihar', 'Mandla', 'Mandsaur', 'Mauganj', 'Morena', 'Narmadapuram', 'Narsinghpur', 'Neemuch', 'Niwari', 'Panna', 'Pandhurna', 'Raisen', 'Rajgarh', 'Ratlam', 'Rewa', 'Sagar', 'Satna', 'Sehore', 'Seoni', 'Shahdol', 'Shajapur', 'Sheopur', 'Shivpuri', 'Sidhi', 'Singrauli', 'Tikamgarh', 'Ujjain', 'Umaria', 'Vidisha'],
+    'Maharashtra': ['Ahilyanagar', 'Akola', 'Amravati', 'Beed', 'Bhandara', 'Buldhana', 'Chandrapur', 'Chhatrapati Sambhajinagar', 'Dharashiv', 'Dhule', 'Gadchiroli', 'Gondia', 'Hingoli', 'Jalgaon', 'Jalna', 'Kolhapur', 'Latur', 'Mumbai City', 'Mumbai Suburban', 'Nagpur', 'Nanded', 'Nandurbar', 'Nashik', 'Palghar', 'Parbhani', 'Pune', 'Raigad', 'Ratnagiri', 'Sangli', 'Satara', 'Sindhudurg', 'Solapur', 'Thane', 'Wardha', 'Washim', 'Yavatmal'],
+    'Manipur': ['Bishnupur', 'Chandel', 'Churachandpur', 'Imphal East', 'Imphal West', 'Jiribam', 'Kakching', 'Kamjong', 'Kangpokpi', 'Noney', 'Pherzawl', 'Senapati', 'Tamenglong', 'Tengnoupal', 'Thoubal', 'Ukhrul'],
+    'Meghalaya': ['Eastern West Khasi Hills', 'East Garo Hills', 'East Jaintia Hills', 'East Khasi Hills', 'North Garo Hills', 'Ri-Bhoi', 'South Garo Hills', 'South West Garo Hills', 'South West Khasi Hills', 'West Garo Hills', 'West Jaintia Hills', 'West Khasi Hills'],
+    'Mizoram': ['Aizawl', 'Champhai', 'Hnahthial', 'Khawzawl', 'Kolasib', 'Lawngtlai', 'Lunglei', 'Mamit', 'Saiha', 'Saitual', 'Serchhip'],
+    'Nagaland': ['Chumoukedima', 'Dimapur', 'Kiphire', 'Kohima', 'Longleng', 'Mokokchung', 'Mon', 'Niuland', 'Noklak', 'Peren', 'Phek', 'Shamator', 'Tseminyu', 'Tuensang', 'Wokha', 'Zunheboto'],
+    'Odisha': ['Angul', 'Balangir', 'Balasore', 'Bargarh', 'Bhadrak', 'Boudh', 'Cuttack', 'Deogarh', 'Dhenkanal', 'Gajapati', 'Ganjam', 'Jagatsinghpur', 'Jajpur', 'Jharsuguda', 'Kalahandi', 'Kandhamal', 'Kendrapara', 'Kendujhar', 'Khordha', 'Koraput', 'Malkangiri', 'Mayurbhanj', 'Nabarangpur', 'Nayagarh', 'Nuapada', 'Puri', 'Rayagada', 'Sambalpur', 'Subarnapur', 'Sundargarh'],
+    'Punjab': ['Amritsar', 'Barnala', 'Bathinda', 'Faridkot', 'Fatehgarh Sahib', 'Fazilka', 'Ferozepur', 'Gurdaspur', 'Hoshiarpur', 'Jalandhar', 'Kapurthala', 'Ludhiana', 'Malerkotla', 'Mansa', 'Moga', 'Pathankot', 'Patiala', 'Rupnagar', 'Sahibzada Ajit Singh Nagar', 'Sangrur', 'Shaheed Bhagat Singh Nagar', 'Sri Muktsar Sahib', 'Tarn Taran'],
+    'Rajasthan': ['Ajmer', 'Alwar', 'Balotra', 'Banswara', 'Baran', 'Barmer', 'Beawar', 'Bharatpur', 'Bhilwara', 'Bikaner', 'Bundi', 'Chittorgarh', 'Churu', 'Dausa', 'Deeg', 'Dholpur', 'Didwana-Kuchaman', 'Dungarpur', 'Ganganagar', 'Hanumangarh', 'Jaipur', 'Jaisalmer', 'Jalore', 'Jhalawar', 'Jhunjhunu', 'Jodhpur', 'Karauli', 'Kota', 'Nagaur', 'Pali', 'Phalodi', 'Pratapgarh', 'Rajsamand', 'Salumbar', 'Sawai Madhopur', 'Sikar', 'Sirohi', 'Tonk', 'Udaipur'],
+    'Sikkim': ['Gangtok', 'Gyalshing', 'Mangan', 'Namchi', 'Pakyong', 'Soreng'],
+    'Tamil Nadu': ['Ariyalur', 'Chengalpattu', 'Chennai', 'Coimbatore', 'Cuddalore', 'Dharmapuri', 'Dindigul', 'Erode', 'Kallakurichi', 'Kancheepuram', 'Kanniyakumari', 'Karur', 'Krishnagiri', 'Madurai', 'Mayiladuthurai', 'Nagapattinam', 'Namakkal', 'Nilgiris', 'Perambalur', 'Pudukkottai', 'Ramanathapuram', 'Ranipet', 'Salem', 'Sivaganga', 'Tenkasi', 'Thanjavur', 'Theni', 'Thoothukudi', 'Tiruchirappalli', 'Tirunelveli', 'Tirupathur', 'Tiruppur', 'Tiruvallur', 'Tiruvannamalai', 'Tiruvarur', 'Vellore', 'Viluppuram', 'Virudhunagar'],
+    'Telangana': ['Adilabad', 'Bhadradri Kothagudem', 'Hanumakonda', 'Hyderabad', 'Jagtial', 'Jangaon', 'Jayashankar Bhupalpally', 'Jogulamba Gadwal', 'Kamareddy', 'Karimnagar', 'Khammam', 'Kumuram Bheem Asifabad', 'Mahabubabad', 'Mahabubnagar', 'Mancherial', 'Medak', 'Medchal-Malkajgiri', 'Mulugu', 'Nagarkurnool', 'Nalgonda', 'Narayanpet', 'Nirmal', 'Nizamabad', 'Peddapalli', 'Rajanna Sircilla', 'Rangareddy', 'Sangareddy', 'Siddipet', 'Suryapet', 'Vikarabad', 'Wanaparthy', 'Warangal', 'Yadadri Bhuvanagiri'],
+    'Tripura': ['Dhalai', 'Gomati', 'Khowai', 'North Tripura', 'Sepahijala', 'South Tripura', 'Unakoti', 'West Tripura'],
+    'Uttar Pradesh': ['Agra', 'Aligarh', 'Ambedkar Nagar', 'Amethi', 'Amroha', 'Auraiya', 'Ayodhya', 'Azamgarh', 'Baghpat', 'Bahraich', 'Ballia', 'Balrampur', 'Banda', 'Barabanki', 'Bareilly', 'Basti', 'Bhadohi', 'Bijnor', 'Budaun', 'Bulandshahr', 'Chandauli', 'Chitrakoot', 'Deoria', 'Etah', 'Etawah', 'Farrukhabad', 'Fatehpur', 'Firozabad', 'Gautam Buddha Nagar', 'Ghaziabad', 'Ghazipur', 'Gonda', 'Gorakhpur', 'Hamirpur', 'Hapur', 'Hardoi', 'Hathras', 'Jalaun', 'Jaunpur', 'Jhansi', 'Kannauj', 'Kanpur Dehat', 'Kanpur Nagar', 'Kasganj', 'Kaushambi', 'Kushinagar', 'Lakhimpur Kheri', 'Lalitpur', 'Lucknow', 'Maharajganj', 'Mahoba', 'Mainpuri', 'Mathura', 'Mau', 'Meerut', 'Mirzapur', 'Moradabad', 'Muzaffarnagar', 'Pilibhit', 'Pratapgarh', 'Prayagraj', 'Raebareli', 'Rampur', 'Saharanpur', 'Sambhal', 'Sant Kabir Nagar', 'Shahjahanpur', 'Shamli', 'Shrawasti', 'Siddharthnagar', 'Sitapur', 'Sonbhadra', 'Sultanpur', 'Unnao', 'Varanasi'],
+    'Uttarakhand': ['Almora', 'Bageshwar', 'Chamoli', 'Champawat', 'Dehradun', 'Haridwar', 'Nainital', 'Pauri Garhwal', 'Pithoragarh', 'Rudraprayag', 'Tehri Garhwal', 'Udham Singh Nagar', 'Uttarkashi'],
+    'West Bengal': ['Alipurduar', 'Bankura', 'Birbhum', 'Cooch Behar', 'Dakshin Dinajpur', 'Darjeeling', 'Hooghly', 'Howrah', 'Jalpaiguri', 'Jhargram', 'Kalimpong', 'Kolkata', 'Malda', 'Murshidabad', 'Nadia', 'North 24 Parganas', 'Paschim Bardhaman', 'Paschim Medinipur', 'Purba Bardhaman', 'Purba Medinipur', 'Purulia', 'South 24 Parganas', 'Uttar Dinajpur'],
+    'Andaman and Nicobar Islands': ['Nicobar', 'North and Middle Andaman', 'South Andaman'],
+    'Chandigarh': ['Chandigarh'],
+    'Dadra and Nagar Haveli and Daman and Diu': ['Dadra and Nagar Haveli', 'Daman', 'Diu'],
+    'Delhi': ['Central Delhi', 'East Delhi', 'New Delhi', 'North Delhi', 'North East Delhi', 'North West Delhi', 'Shahdara', 'South Delhi', 'South East Delhi', 'South West Delhi', 'West Delhi'],
+    'Jammu and Kashmir': ['Anantnag', 'Bandipora', 'Baramulla', 'Budgam', 'Doda', 'Ganderbal', 'Jammu', 'Kathua', 'Kishtwar', 'Kulgam', 'Kupwara', 'Poonch', 'Pulwama', 'Rajouri', 'Ramban', 'Reasi', 'Samba', 'Shopian', 'Srinagar', 'Udhampur'],
+    'Ladakh': ['Kargil', 'Leh'],
+    'Lakshadweep': ['Agatti', 'Amini', 'Andrott', 'Bitra', 'Chetlat', 'Kadmat', 'Kalpeni', 'Kavaratti', 'Kiltan', 'Minicoy'],
+    'Puducherry': ['Karaikal', 'Mahe', 'Puducherry', 'Yanam']
+};
+
+/* Add city/tourism options for States and Union Territories not in the original list. */
+indiaDestinations['Andhra Pradesh'] = Array.from(new Set([...(indiaDestinations['Andhra Pradesh'] || []), 'Visakhapatnam', 'Vijayawada', 'Tirupati', 'Amaravati', 'Araku Valley', 'Rajahmundry']));
+indiaDestinations['Arunachal Pradesh'] = Array.from(new Set([...(indiaDestinations['Arunachal Pradesh'] || []), 'Itanagar', 'Tawang', 'Ziro', 'Bomdila', 'Pasighat']));
+indiaDestinations['Bihar'] = Array.from(new Set([...(indiaDestinations['Bihar'] || []), 'Patna', 'Gaya', 'Bodh Gaya', 'Nalanda', 'Rajgir']));
+indiaDestinations['Haryana'] = Array.from(new Set([...(indiaDestinations['Haryana'] || []), 'Gurugram', 'Faridabad', 'Kurukshetra', 'Panipat', 'Karnal']));
+indiaDestinations['Jharkhand'] = Array.from(new Set([...(indiaDestinations['Jharkhand'] || []), 'Ranchi', 'Jamshedpur', 'Deoghar', 'Dhanbad', 'Netarhat']));
+indiaDestinations['Madhya Pradesh'] = Array.from(new Set([...(indiaDestinations['Madhya Pradesh'] || []), 'Bhopal', 'Indore', 'Ujjain', 'Gwalior', 'Jabalpur', 'Khajuraho', 'Sanchi']));
+indiaDestinations['Manipur'] = Array.from(new Set([...(indiaDestinations['Manipur'] || []), 'Imphal', 'Loktak Lake', 'Ukhrul']));
+indiaDestinations['Meghalaya'] = Array.from(new Set([...(indiaDestinations['Meghalaya'] || []), 'Shillong', 'Cherrapunji', 'Mawlynnong', 'Dawki']));
+indiaDestinations['Mizoram'] = Array.from(new Set([...(indiaDestinations['Mizoram'] || []), 'Aizawl', 'Lunglei', 'Champhai']));
+indiaDestinations['Nagaland'] = Array.from(new Set([...(indiaDestinations['Nagaland'] || []), 'Kohima', 'Dimapur', 'Mon']));
+indiaDestinations['Odisha'] = Array.from(new Set([...(indiaDestinations['Odisha'] || []), 'Bhubaneswar', 'Puri', 'Konark', 'Cuttack', 'Chilika Lake']));
+indiaDestinations['Sikkim'] = Array.from(new Set([...(indiaDestinations['Sikkim'] || []), 'Gangtok', 'Pelling', 'Namchi', 'Lachung']));
+indiaDestinations['Telangana'] = Array.from(new Set([...(indiaDestinations['Telangana'] || []), 'Hyderabad', 'Warangal', 'Nizamabad', 'Bhadrachalam']));
+indiaDestinations['Tripura'] = Array.from(new Set([...(indiaDestinations['Tripura'] || []), 'Agartala', 'Udaipur', 'Neermahal']));
+indiaDestinations['Andaman and Nicobar Islands'] = Array.from(new Set([...(indiaDestinations['Andaman and Nicobar Islands'] || []), 'Port Blair', 'Havelock Island', 'Neil Island']));
+indiaDestinations['Chandigarh'] = Array.from(new Set([...(indiaDestinations['Chandigarh'] || []), 'Chandigarh']));
+indiaDestinations['Dadra and Nagar Haveli and Daman and Diu'] = Array.from(new Set([...(indiaDestinations['Dadra and Nagar Haveli and Daman and Diu'] || []), 'Daman', 'Diu', 'Silvassa']));
+indiaDestinations['Ladakh'] = Array.from(new Set([...(indiaDestinations['Ladakh'] || []), 'Leh', 'Nubra Valley', 'Pangong Lake', 'Kargil']));
+indiaDestinations['Lakshadweep'] = Array.from(new Set([...(indiaDestinations['Lakshadweep'] || []), 'Kavaratti', 'Agatti', 'Minicoy']));
+indiaDestinations['Puducherry'] = Array.from(new Set([...(indiaDestinations['Puducherry'] || []), 'Puducherry', 'Karaikal', 'Mahe', 'Yanam']));
+
 /* =========================================================
    INTERNATIONAL COUNTRY → CITY DATABASE
 ========================================================= */
@@ -997,78 +1059,137 @@ function getCanonicalCityName(city) {
 ========================================================= */
 
 function setupIndiaCityDropdown() {
+    const stateSelect = getElement("indiaState");
+    const citySelect = getElement("indiaCity");
+    if (!stateSelect || !citySelect) return;
 
-    const stateSelect =
-        getElement("indiaState");
-
-    const citySelect =
-        getElement("indiaCity");
-
-    if (!stateSelect || !citySelect) {
-        return;
+    // Keep City and District as two separate selectors.
+    let districtSelect = getElement("indiaDistrict");
+    if (!districtSelect) {
+        districtSelect = document.createElement("select");
+        districtSelect.id = "indiaDistrict";
+        districtSelect.name = "indiaDistrict";
+        districtSelect.className = citySelect.className;
+        districtSelect.disabled = true;
+        districtSelect.setAttribute("aria-label", "Select District");
+        districtSelect.innerHTML = '<option value="">Select District (optional)</option>';
+        const wrapper = citySelect.parentElement;
+        if (wrapper && wrapper.parentElement) {
+            wrapper.parentElement.insertBefore(districtSelect, wrapper.nextSibling);
+        } else {
+            citySelect.insertAdjacentElement("afterend", districtSelect);
+        }
     }
 
+    // Populate all 28 States and 8 Union Territories without removing City.
+    const allStates = Object.keys(indiaDistricts);
+    const currentState = stateSelect.value;
+    stateSelect.innerHTML = '<option value="">Select State / Union Territory</option>';
+    allStates.forEach(function(state) {
+        const option = document.createElement("option");
+        option.value = state;
+        option.textContent = state;
+        stateSelect.appendChild(option);
+    });
+    if (allStates.includes(currentState)) stateSelect.value = currentState;
 
-    stateSelect.addEventListener(
-        "change",
-        function() {
+    function fillSelect(select, placeholder, items) {
+        select.innerHTML = "";
+        const first = document.createElement("option");
+        first.value = "";
+        first.textContent = placeholder;
+        select.appendChild(first);
+        (items || []).forEach(function(item) {
+            const option = document.createElement("option");
+            option.value = item;
+            option.textContent = item;
+            select.appendChild(option);
+        });
+        select.disabled = !(items && items.length);
+    }
 
-            const state =
-                stateSelect.value;
+    function updateLocationOptions() {
+        const state = stateSelect.value;
+        fillSelect(citySelect, "Select City (optional)", indiaDestinations[state] || []);
+        fillSelect(districtSelect, "Select District (optional)", indiaDistricts[state] || []);
+        updateIndiaLocationInfo();
+    }
 
-            citySelect.innerHTML =
-                `<option value="">Select City</option>`;
+    stateSelect.addEventListener("change", updateLocationOptions);
+    citySelect.addEventListener("change", function() {
+        if (citySelect.value) districtSelect.value = "";
+        updateIndiaLocationInfo();
+    });
+    districtSelect.addEventListener("change", function() {
+        if (districtSelect.value) citySelect.value = "";
+        updateIndiaLocationInfo();
+    });
 
-            citySelect.disabled =
-                true;
-
-
-            if (
-                !state ||
-                !indiaDestinations[state]
-            ) {
-
-                updateIndiaLocationInfo();
-
-                return;
-
-            }
-
-
-            indiaDestinations[state]
-                .forEach(function(city) {
-
-                    const option =
-                        document.createElement("option");
-
-                    option.value =
-                        city;
-
-                    option.textContent =
-                        city;
-
-                    citySelect.appendChild(
-                        option
-                    );
-
-                });
-
-
-            citySelect.disabled =
-                false;
-
-            updateIndiaLocationInfo();
-
-        }
-    );
-
-
-    citySelect.addEventListener(
-        "change",
-        updateIndiaLocationInfo
-    );
-
+    updateLocationOptions();
 }
+
+
+/* =========================================================
+   DISTRICT SIGHTSEEING
+========================================================= */
+const districtSightseeing = {
+    "Ahmedabad": ["Sabarmati Ashram", "Adalaj Stepwell", "Kankaria Lake", "Sabarmati Riverfront", "Sidi Saiyyed Mosque"],
+    "Bhavnagar": ["Takhteshwar Temple", "Victoria Park", "Gaurishankar Lake", "Blackbuck National Park, Velavadar"],
+    "Vadodara": ["Laxmi Vilas Palace", "Sayaji Garden", "Baroda Museum", "Kirti Mandir"],
+    "Surat": ["Dumas Beach", "Dutch Garden", "Sarthana Nature Park", "Surat Castle"],
+    "Rajkot": ["Watson Museum", "Kaba Gandhi No Delo", "Aji Dam", "Rotary Dolls Museum"],
+    "Amritsar": ["Golden Temple", "Jallianwala Bagh", "Partition Museum", "Gobindgarh Fort"],
+    "Agra": ["Taj Mahal", "Agra Fort", "Mehtab Bagh", "Itmad-ud-Daulah"],
+    "Varanasi": ["Dashashwamedh Ghat", "Kashi Vishwanath Temple", "Assi Ghat", "Sarnath"],
+    "Jaipur": ["Amber Fort", "Hawa Mahal", "City Palace", "Jantar Mantar"],
+    "Jodhpur": ["Mehrangarh Fort", "Jaswant Thada", "Umaid Bhawan Palace", "Clock Tower Market"],
+    "Udaipur": ["City Palace", "Lake Pichola", "Jagdish Temple", "Saheliyon Ki Bari"],
+    "Mumbai": ["Gateway of India", "Marine Drive", "Elephanta Caves", "Chhatrapati Shivaji Maharaj Terminus"],
+    "Pune": ["Shaniwar Wada", "Aga Khan Palace", "Sinhagad Fort", "Dagdusheth Halwai Ganpati Temple"],
+    "Nashik": ["Trimbakeshwar Temple", "Pandav Leni", "Sula Vineyards", "Ramkund"],
+    "Kolkata": ["Victoria Memorial", "Howrah Bridge", "Indian Museum", "Dakshineswar Kali Temple"],
+    "Darjeeling": ["Tiger Hill", "Batasia Loop", "Darjeeling Himalayan Railway", "Peace Pagoda"],
+    "Chennai": ["Marina Beach", "Kapaleeshwarar Temple", "Fort St. George", "Government Museum"],
+    "Mysuru": ["Mysore Palace", "Chamundi Hill", "Brindavan Gardens", "St. Philomena's Church"],
+    "Bengaluru": ["Bangalore Palace", "Lalbagh Botanical Garden", "Cubbon Park", "Vidhana Soudha"],
+    "Hyderabad": ["Charminar", "Golconda Fort", "Salar Jung Museum", "Chowmahalla Palace"],
+    "Leh": ["Leh Palace", "Shanti Stupa", "Thiksey Monastery", "Hall of Fame"],
+    "Kargil": ["Kargil War Memorial", "Mulbekh Monastery", "Suru Valley", "Hunderman Village"],
+    "Panaji": ["Fontainhas", "Dona Paula", "Miramar Beach", "Reis Magos Fort"],
+    "North Goa": ["Fort Aguada", "Baga Beach", "Calangute Beach", "Chapora Fort"],
+    "South Goa": ["Colva Beach", "Palolem Beach", "Cabo de Rama Fort", "Benaulim Beach"],
+    "Dehradun": ["Robber's Cave", "Sahastradhara", "Forest Research Institute", "Tapkeshwar Temple"],
+    "Rishikesh": ["Ram Jhula", "Triveni Ghat", "Beatles Ashram", "Neer Garh Waterfall"],
+    "Kochi": ["Fort Kochi", "Chinese Fishing Nets", "Mattancherry Palace", "Jew Town"],
+    "Munnar": ["Tea Gardens", "Mattupetty Dam", "Eravikulam National Park", "Top Station"],
+    "Lucknow": ["Bara Imambara", "Chota Imambara", "Rumi Darwaza", "Hazratganj"],
+    "Ayodhya": ["Ram Janmabhoomi", "Hanuman Garhi", "Kanak Bhawan", "Saryu Ghat"],
+    "Prayagraj": ["Triveni Sangam", "Anand Bhavan", "Allahabad Fort", "Khusro Bagh"],
+    "Patna": ["Golghar", "Bihar Museum", "Takht Sri Patna Sahib", "Kumhrar"],
+    "Bhopal": ["Upper Lake", "Van Vihar National Park", "Taj-ul-Masajid", "State Museum"],
+    "Indore": ["Rajwada Palace", "Lal Bagh Palace", "Sarafa Bazaar", "Annapurna Temple"],
+    "Visakhapatnam": ["RK Beach", "Kailasagiri", "Submarine Museum", "Simhachalam Temple"],
+    "Bhubaneswar": ["Lingaraj Temple", "Udayagiri and Khandagiri Caves", "Dhauli Shanti Stupa", "Nandankanan Zoo"],
+    "Puri": ["Jagannath Temple", "Puri Beach", "Gundicha Temple", "Raghurajpur Heritage Village"],
+    "Shillong": ["Umiam Lake", "Elephant Falls", "Shillong Peak", "Ward's Lake"],
+    "Gangtok": ["MG Marg", "Tsomgo Lake", "Rumtek Monastery", "Hanuman Tok"],
+    "Port Blair": ["Cellular Jail", "Corbyn's Cove", "Chidiya Tapu", "Ross Island"],
+    "Puducherry": ["Promenade Beach", "Auroville", "Sri Aurobindo Ashram", "French Quarter"],
+    "Silvassa": ["Vanganga Lake Garden", "Dudhni Lake", "Tribal Cultural Museum", "Dadra Garden"],
+    "Daman": ["Jampore Beach", "Devka Beach", "Moti Daman Fort", "Dominican Monastery"],
+    "Diu": ["Diu Fort", "Nagoa Beach", "Naida Caves", "Gangeshwar Temple"],
+    "New Delhi": ["India Gate", "Qutub Minar", "Humayun's Tomb", "Red Fort"],
+    "Srinagar": ["Dal Lake", "Mughal Gardens", "Shankaracharya Temple", "Hazratbal Shrine"],
+    "Jammu": ["Raghunath Temple", "Bahu Fort", "Mubarak Mandi Palace", "Amar Mahal Museum"],
+    "Ranchi": ["Hundru Falls", "Rock Garden", "Tagore Hill", "Dassam Falls"],
+    "Coimbatore": ["Marudhamalai Temple", "Perur Pateeswarar Temple", "VOC Park", "Siruvani Waterfalls"],
+    "Madurai": ["Meenakshi Amman Temple", "Thirumalai Nayakkar Palace", "Gandhi Memorial Museum", "Vandiyur Mariamman Teppakulam"],
+    "Vijayawada": ["Kanaka Durga Temple", "Prakasam Barrage", "Undavalli Caves", "Bhavani Island"],
+    "Chandigarh": ["Rock Garden", "Sukhna Lake", "Rose Garden", "Capitol Complex"],
+    "Agartala": ["Ujjayanta Palace", "Neermahal", "Tripura Sundari Temple", "Heritage Park"],
+    "Imphal": ["Kangla Fort", "Loktak Lake", "INA Memorial", "Manipur State Museum"],
+    "Ziro": ["Ziro Valley", "Talley Valley Wildlife Sanctuary", "Meghna Cave Temple", "Pine Grove"]
+};
 
 
 /* =========================================================
@@ -1155,32 +1276,15 @@ function setupInternationalCityDropdown() {
 ========================================================= */
 
 function updateIndiaLocationInfo() {
-
-    const state =
-        getElement("indiaState");
-
-    const city =
-        getElement("indiaCity");
-
-    const info =
-        getElement("indiaLocationInfo");
-
-    if (!state || !city || !info) {
-        return;
-    }
-
-
-    if (state.value && city.value) {
-
-        info.innerHTML =
-            `📍 ${city.value}, ${state.value}, India`;
-
-    } else {
-
-        info.innerHTML = "";
-
-    }
-
+    const state = getElement("indiaState");
+    const city = getElement("indiaCity");
+    const district = getElement("indiaDistrict");
+    const info = getElement("indiaLocationInfo") || getElement("indiaDestinationInfo");
+    if (!state || !info) return;
+    const selectedPlace = (city && city.value) || (district && district.value) || "";
+    info.textContent = selectedPlace && state.value
+        ? "📍 " + selectedPlace + ", " + state.value + ", India"
+        : "";
 }
 
 
@@ -1445,28 +1549,13 @@ function getTripDays() {
 ========================================================= */
 
 function getSelectedDestination() {
-
-    if (
-        selectedTripType === "India"
-    ) {
-
-        const city =
-            getElement("indiaCity");
-
-        return city
-            ? city.value
-            : "";
-
+    if (selectedTripType === "India") {
+        const city = getElement("indiaCity");
+        const district = getElement("indiaDistrict");
+        return (city && city.value) || (district && district.value) || "";
     }
-
-
-    const city =
-        getElement("internationalCity");
-
-    return city
-        ? city.value
-        : "";
-
+    const city = getElement("internationalCity");
+    return city ? city.value : "";
 }
 
 
@@ -1506,6 +1595,19 @@ function getFromCity() {
 
 function getDestinationDetails(destination) {
 
+    if (selectedTripType === "India" && districtSightseeing[destination]) {
+        return {
+            state: (getElement("indiaState") || {}).value || "",
+            country: "India",
+            currency: "INR",
+            rate: 1,
+            places: districtSightseeing[destination].map(function(place, index) {
+                const times = ["09:00 AM", "11:00 AM", "01:30 PM", "03:30 PM", "05:30 PM"];
+                return [times[index % times.length], place, "Visit " + place + " and explore this local attraction. Check current opening hours before travelling."];
+            })
+        };
+    }
+
     if (
         destinationData[destination]
     ) {
@@ -1517,62 +1619,140 @@ function getDestinationDetails(destination) {
     }
 
 
+    
+const attractionData = {
+    "Ahmedabad": [
+        ["09:00 AM", "Sabarmati Ashram", "Visit the historic ashram."],
+        ["11:00 AM", "Adalaj Stepwell", "Explore the historic stepwell."],
+        ["01:30 PM", "Sidi Saiyyed Mosque", "See the famous stone latticework."],
+        ["03:30 PM", "Kankaria Lake", "Enjoy the lakeside attractions."],
+        ["05:30 PM", "Atal Bridge", "Enjoy views of the Sabarmati River."]
+    ],
+    "Vadodara": [
+        ["09:00 AM", "Laxmi Vilas Palace", "Explore the royal palace."],
+        ["11:00 AM", "Sayaji Baug", "Visit the city's historic garden."],
+        ["01:30 PM", "Baroda Museum and Picture Gallery", "Explore art and history."],
+        ["03:30 PM", "EME Temple", "Visit the distinctive temple."],
+        ["05:30 PM", "Sursagar Lake", "Relax by the lake."]
+    ],
+    "Surat": [
+        ["09:00 AM", "Dumas Beach", "Visit the popular coastal spot."],
+        ["11:00 AM", "Dutch Garden", "Explore the historic garden."],
+        ["01:30 PM", "Sardar Patel Museum", "Explore local history."],
+        ["03:30 PM", "Gopi Talav", "Visit the restored lake area."],
+        ["05:30 PM", "Science Centre Surat", "Explore the science exhibits."]
+    ],
+    "Jaipur": [
+        ["09:00 AM", "Amber Fort", "Explore the hilltop fort."],
+        ["11:00 AM", "Hawa Mahal", "See Jaipur's famous palace facade."],
+        ["01:30 PM", "City Palace", "Explore the royal palace complex."],
+        ["03:30 PM", "Jantar Mantar", "Visit the historic observatory."],
+        ["05:30 PM", "Jal Mahal", "Enjoy views of the palace on the lake."]
+    ],
+    "Mumbai": [
+        ["09:00 AM", "Gateway of India", "Visit the iconic waterfront monument."],
+        ["11:00 AM", "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya", "Explore museum collections."],
+        ["01:30 PM", "Marine Drive", "Walk along the famous waterfront."],
+        ["03:30 PM", "Siddhivinayak Temple", "Visit the well-known temple."],
+        ["05:30 PM", "Juhu Beach", "Enjoy the seaside."]
+    ],
+    "Delhi": [
+        ["09:00 AM", "Red Fort", "Explore the historic fort."],
+        ["11:00 AM", "India Gate", "Visit the national war memorial."],
+        ["01:30 PM", "Qutub Minar", "Explore the historic monument."],
+        ["03:30 PM", "Humayun's Tomb", "Visit the garden tomb."],
+        ["05:30 PM", "Connaught Place", "Explore the central shopping district."]
+    ],
+    "Agra": [
+        ["08:00 AM", "Taj Mahal", "Visit the famous marble mausoleum."],
+        ["11:00 AM", "Agra Fort", "Explore the historic Mughal fort."],
+        ["01:30 PM", "Itmad-ud-Daula", "Visit the historic marble tomb."],
+        ["03:30 PM", "Mehtab Bagh", "Enjoy views of the Taj Mahal."],
+        ["05:30 PM", "Sadar Bazaar", "Explore the local market."]
+    ],
+    "Udaipur": [
+        ["09:00 AM", "City Palace", "Explore the palace complex."],
+        ["11:00 AM", "Lake Pichola", "Enjoy the lake views."],
+        ["01:30 PM", "Saheliyon-ki-Bari", "Visit the historic garden."],
+        ["03:30 PM", "Jag Mandir", "Explore the island palace if accessible."],
+        ["05:30 PM", "Fateh Sagar Lake", "Enjoy the lakeside scenery."]
+    ],
+    "Manali": [
+        ["09:00 AM", "Hadimba Devi Temple", "Visit the forest temple."],
+        ["11:00 AM", "Old Manali", "Explore the village lanes."],
+        ["01:30 PM", "Vashisht Temple", "Visit the temple and nearby springs."],
+        ["03:30 PM", "Solang Valley", "Enjoy mountain scenery, weather permitting."],
+        ["05:30 PM", "Mall Road Manali", "Explore the central market area."]
+    ],
+    "Shimla": [
+        ["09:00 AM", "The Ridge", "Enjoy views over Shimla."],
+        ["11:00 AM", "Christ Church", "Visit the historic church."],
+        ["01:30 PM", "Jakhoo Temple", "Visit the hilltop temple."],
+        ["03:30 PM", "Mall Road", "Explore the pedestrian shopping street."],
+        ["05:30 PM", "Scandal Point", "Enjoy the town's central viewpoint."]
+    ],
+    "Goa": [
+        ["09:00 AM", "Basilica of Bom Jesus", "Visit the historic church in Old Goa."],
+        ["11:00 AM", "Fort Aguada", "Explore the Portuguese-era fort."],
+        ["01:30 PM", "Calangute Beach", "Enjoy the North Goa coastline."],
+        ["03:30 PM", "Chapora Fort", "Enjoy the coastal views."],
+        ["05:30 PM", "Baga Beach", "Relax by the sea."]
+    ],
+    "Dubai": [
+        ["09:00 AM", "Burj Khalifa", "Visit the landmark; tickets may be required."],
+        ["11:00 AM", "Dubai Mall", "Explore the shopping and entertainment complex."],
+        ["01:30 PM", "Museum of the Future", "Visit if tickets are available."],
+        ["03:30 PM", "Dubai Marina", "Explore the waterfront district."],
+        ["05:30 PM", "Jumeirah Beach", "Enjoy views of the coast."]
+    ],
+    "Singapore": [
+        ["09:00 AM", "Gardens by the Bay", "Explore the waterfront gardens."],
+        ["11:00 AM", "Merlion Park", "See the famous Merlion statue."],
+        ["01:30 PM", "Chinatown", "Explore the historic neighbourhood."],
+        ["03:30 PM", "Marina Bay Sands", "Explore the Marina Bay area."],
+        ["05:30 PM", "Clarke Quay", "Enjoy the riverside district."]
+    ],
+    "London": [
+        ["09:00 AM", "Tower of London", "Explore the historic fortress."],
+        ["11:00 AM", "Tower Bridge", "Visit the famous bridge."],
+        ["01:30 PM", "British Museum", "Explore the museum collections."],
+        ["03:30 PM", "Buckingham Palace", "See the palace exterior."],
+        ["05:30 PM", "Trafalgar Square", "Visit the famous central square."]
+    ],
+    "Bangkok": [
+        ["09:00 AM", "Grand Palace", "Explore the royal palace complex."],
+        ["11:00 AM", "Wat Pho", "Visit the famous temple."],
+        ["01:30 PM", "Wat Arun", "Explore the Temple of Dawn."],
+        ["03:30 PM", "Yaowarat Road", "Explore Bangkok's Chinatown."],
+        ["05:30 PM", "Asiatique The Riverfront", "Visit the riverside shopping area."]
+    ]
+};
+
+const places = attractionData[destination];
+
+if (places) {
     return {
-
         state: "",
-
-        country:
-            selectedTripType === "India"
-                ? "India"
-                : "",
-
-        currency:
-            "USD",
-
-        rate:
-            84,
-
-        places: [
-
-            [
-                "09:00 AM",
-                "Breakfast",
-                "Start your day with breakfast."
-            ],
-
-            [
-                "10:30 AM",
-                "Main Tourist Attraction",
-                `Visit a popular attraction in ${destination}.`
-            ],
-
-            [
-                "01:00 PM",
-                "Lunch",
-                "Enjoy local food at a recommended restaurant."
-            ],
-
-            [
-                "03:30 PM",
-                "Local Sightseeing",
-                `Explore the important sightseeing places of ${destination}.`
-            ],
-
-            [
-                "06:00 PM",
-                "Sunset / Viewpoint",
-                "Enjoy the evening views."
-            ],
-
-            [
-                "08:00 PM",
-                "Dinner",
-                "Enjoy dinner and return to the hotel."
-            ]
-
-        ]
-
+        country: selectedTripType === "India" ? "India" : "",
+        currency: selectedTripType === "India" ? "INR" : "USD",
+        rate: selectedTripType === "India" ? 1 : 84,
+        places: places
     };
+}
+
+return {
+    state: "",
+    country: selectedTripType === "India" ? "India" : "",
+    currency: selectedTripType === "India" ? "INR" : "USD",
+    rate: selectedTripType === "India" ? 1 : 84,
+    places: [
+        ["09:00 AM", "Breakfast", `Have breakfast in ${destination}.`],
+        ["11:00 AM", `${destination} city centre`, `Explore the central area of ${destination}.`],
+        ["01:30 PM", "Lunch break", `Enjoy lunch in ${destination}.`],
+        ["03:30 PM", `${destination} local market`, `Explore a local market in ${destination}.`],
+        ["05:30 PM", "Evening walk", `Enjoy an evening walk in ${destination}.`]
+    ]
+};
 
 }
 
@@ -3887,3 +4067,48 @@ document.addEventListener(
 
     }
 );
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("select").forEach(function (select) {
+        const option = select.options[select.selectedIndex];
+
+        if (
+            option &&
+            option.textContent.trim().toLowerCase().includes("select district")
+        ) {
+            const container = select.closest(".form-group, .input-group, .form-field");
+
+            if (container) {
+                container.style.display = "none";
+            } else {
+                select.style.display = "none";
+            }
+        }
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("select").forEach(function (select) {
+        const options = Array.from(select.options || []);
+
+        const isLanguageDropdown = options.some(function (option) {
+            return /^(english|ગુજરાતી|gujarati|hindi|हिन्दी)$/i.test(
+                option.textContent.trim()
+            );
+        });
+
+        if (isLanguageDropdown) {
+            const container = select.closest(
+                ".language-selector, .language-switcher, .language-dropdown"
+            );
+
+            if (container) {
+                container.style.display = "none";
+            } else {
+                select.style.display = "none";
+            }
+        }
+    });
+});
